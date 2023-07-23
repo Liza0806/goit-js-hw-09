@@ -31,12 +31,17 @@ let y = Date.now() - chosenDateObj;
    }   
             //console.log(selectedDates)
         //console.log(currentDate)       
-        setInterval(() => {            let ms = chosenDateObj - Date.now();
-                    //console.log(x);
+  setInterval(() => {
+    let ms = chosenDateObj - Date.now();
+    if (ms < 0) {
+      
+      return;
+        }
+           else   {      //console.log(x);
             let x = convertMs(ms);            days.textContent = x.days;
             hours.textContent = x.hours;            minutes.textContent = x.minutes;
             seconds.textContent = x.seconds;         
-        }, 1000)
+        }}, 1000)
 startBtn.removeAttribute('disabled');
                
    }   
